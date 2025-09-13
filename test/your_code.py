@@ -17,10 +17,18 @@ print(df.head(25))
 #print(round(result, 2))
 #print(df[df["Type"] == "Free"]["Rating"].max() - df[df["Type"] != "Free"]["Rating"].max())
 #print(df[df["Type"] != "Free"]["Rating"].mean() - df[df["Type"] == "Free"]["Rating"].mean())
-
-
-print(len(df[(df["Type"] != "Free")  & (df["Rating"] > 4.9) & (df["Category"] == "GAME")].value_counts()))
-print(len(df[(df["Type"] == "Free")  & (df["Rating"] > 4.9) & (df["Category"] == "GAME")].value_counts()))
-
+#print(len(df[(df["Type"] != "Free")  & (df["Rating"] > 4.9) & (df["Category"] == "GAME")].value_counts()))
+#print(len(df[(df["Type"] == "Free")  & (df["Rating"] > 4.9) & (df["Category"] == "GAME")].value_counts()))
 #print(df["Category"].value_counts())
+
+
+#print(df.groupby(by= "Type")["Rating"].agg(["min", "mean", "max"]))
+#print(df.groupby(by= "Content Rating")["Price"].agg(["min", "mean", "max"]))
+#print(df[df["Category"] == "GAME"]["Content Rating"].max())
+#print(df[(df["Content Rating"] == "Everyone") & (df["Type"] == "Paid")]["Category"].value_counts())
+
+print(len(df[(df["Content Rating"] != "Everyone") & (df["Type"] == "Free")]["Category"].value_counts()))
+
+
+
 
